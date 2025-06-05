@@ -1,0 +1,28 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "bin": {
+    "hackmd-downloader": "index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ropin13/hackmd-export.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ropin13/hackmd-export/issues"
+  },
+  "homepage": "https://github.com/ropin13/hackmd-export#readme",
+  "dependencies": {
+    "axios": "^1.9.0",
+    "yargs": "^18.0.0"
+  }
+}
