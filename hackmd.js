@@ -62,9 +62,9 @@ export async function saveNoteToFile(noteTitle, noteContent) {
       fs.mkdirSync(outputDir, { recursive: true });
     }
 
-    // Sanitize title: replace non-alphanumeric characters (except spaces, hyphens) with underscore
-    // and remove any remaining characters that are problematic for filenames.
-    const sanitizedTitle = noteTitle.replace(/[^\w\s-]/g, '_').replace(/[\s\/\\:]/g, '_');
+    // Sanitize title: only remove characters not allowed in Windows filenames: \/:*?"<>|
+    // Allow Chinese and most Unicode characters
+    const sanitizedTitle = noteTitle.replace(/[\\/:*?"<>|]/g, '_');
     const filePath = path.join(outputDir, `${sanitizedTitle}.md`);
 
     fs.writeFileSync(filePath, noteContent);
